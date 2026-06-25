@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Empresarial</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="contenedor-login">
+
+    <div class="card">
+
+        <h1>🏢 Directorio Empresarial</h1>
+
+        <p>Registro de acceso</p>
+
+        <form id="registroForm">
+
+            <input type="text"
+                   id="nombre"
+                   placeholder="Nombre Completo"
+                   required>
+
+            <input type="email"
+                   id="correo"
+                   placeholder="Correo Electrónico"
+                   required>
+
+            <input type="date"
+                   id="fecha"
+                   required>
+
+            <input type="password"
+                   id="password"
+                   placeholder="Contraseña"
+                   required>
+
+            <button type="submit">
+                Ingresar al Directorio
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+document
+.getElementById("registroForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const usuario = {
+        nombre: document.getElementById("nombre").value,
+        correo: document.getElementById("correo").value,
+        fecha: document.getElementById("fecha").value
+    };
+
+    localStorage.setItem(
+        "usuarioEmpresas",
+        JSON.stringify(usuario)
+    );
+
+    window.location.href="directorio.html";
+
+});
+
+</script>
+
+</body>
+</html>
